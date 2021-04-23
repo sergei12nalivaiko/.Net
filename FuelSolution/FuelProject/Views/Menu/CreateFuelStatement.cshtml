@@ -1,0 +1,352 @@
+﻿@model FuelProject.Models.FuelDailyStatement
+
+
+@{
+    ViewBag.Title = "CreateFuelStatement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="resultSearch">
+
+    @using (Ajax.BeginForm("CreateFuelStatement", new AjaxOptions { UpdateTargetId = "resultSearch", InsertionMode = InsertionMode.Replace, }))
+    {
+
+
+        <h2>Создание суточной ведомости</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th id="NumberStatement">
+                    @Html.LabelFor(model => model.NumberStatement, htmlAttributes: new { @class = "control-label col-md-2" })
+                </th>
+                <th id="Date">
+                    @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                </th>
+                <th id="LocNum">
+                    @Html.LabelFor(model => model.LocomotiveNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.RouteNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.LNameLocDriver, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.CounterReadingBefore, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.CounterReadingAfter, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.VolumeLiters, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.Density, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.Organization, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+                <th>
+                    @Html.LabelFor(model => model.HomeDepo, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                </th>
+            </tr>
+            <tr>
+
+                <th>
+
+
+                    @Html.EditorFor(model => model.NumberStatement, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NumberStatement, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @*@Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })*@
+                    <input type="text" name="Date" required id="DateForm" class="form-control  date1" autocomplete="off" />
+
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.LocomotiveNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LocomotiveNumber, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.RouteNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RouteNumber, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.LNameLocDriver, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LNameLocDriver, "", new { @class = "text-danger" })
+
+                </th>
+                <th id="Before">
+                    @*@Html.EditorFor(model => model.CounterReadingBefore, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @*@Html.ValidationMessageFor(model => model.CounterReadingBefore, "", new { @class = "text-danger" })*@
+                    <input type="text" required name="CounterReadingBefore" id="CounterReadingBefore" />
+                </th>
+                <th id="After">
+                    @*@Html.EditorFor(model => model.CounterReadingAfter, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @*@Html.ValidationMessageFor(model => model.CounterReadingAfter, "", new { @class = "text-danger" })*@
+                    <input type="text" required name="CounterReadingAfter" id="CounterReadingAfter" />
+                </th>
+
+                <th id="Litr">
+
+                    <input type="text" required name="VolumeLiters" id="VolumeLiters" />
+
+                    @*@Html.EditorFor(model => model.VolumeLiters, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @*@Html.ValidationMessageFor(model => model.VolumeLiters, "", new { @class = "text-danger" })*@
+
+
+                </th>
+                <th id="Den">
+                    <select required name="Density" id="Density">
+                        <option>0,830</option>
+                        <option>0,831</option>
+                        <option>0,832</option>
+                        <option>0,833</option>
+                        <option>0,834</option>
+                        <option>0,835</option>
+                        <option>0,836</option>
+                        <option>0,836</option>
+                        <option>0,837</option>
+                        <option>0,838</option>
+                        <option>0,839</option>
+                        <option>0,840</option>
+                        <option>0,841</option>
+                        <option>0,842</option>
+                        <option>0,843</option>
+                        <option>0,844</option>
+                        <option>0,845</option>
+                        <option>0,846</option>
+                        <option>0,847</option>
+                        <option>0,848</option>
+                        <option>0,849</option>
+                        <option>0,850</option>
+                        <option>0,851</option>
+                        <option>0,880</option>
+                        <option>0,871</option>
+                        <option>0,872</option>
+                        <option>0,873</option>
+                        <option>0,874</option>
+                        <option>0,875</option>
+                        <option>0,876</option>
+                        <option>0,877</option>
+                        <option>0,878</option>
+                        <option>0,879</option>
+                        <option>0,880</option>
+                        <option>0,881</option>
+                        <option>0,882</option>
+                        <option>0,883</option>
+                        <option>0,884</option>
+                        <option>0,885</option>
+                        <option>0,886</option>
+                        <option>0,887</option>
+                        <option>0,888</option>
+                        <option>0,889</option>
+                        <option>0,890</option>
+                        <option>0,891</option>
+                        <option>0,892</option>
+                        <option>0,893</option>
+                        <option>0,894</option>
+                        <option>0,895</option>
+                        <option>0,896</option>
+                        <option>0,897</option>
+                        <option>0,898</option>
+                        <option>0,899</option>
+                        <option>0,900</option>
+                        <option>0,901</option>
+                        <option>0,902</option>
+                        <option>0,903</option>
+                        <option>0,904</option>
+                        <option>0,905</option>
+                        <option>0,906</option>
+                        <option>0,907</option>
+                        <option>0,908</option>
+                        <option>0,909</option>
+                        <option>0,910</option>
+                        <option>0,911</option>
+                    </select>
+                    @*<input type="text"  required name="Density" id="Density" />*@
+
+                    @*@Html.EditorFor(model => model.Density, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Density, "", new { @class = "text-danger" })*@
+
+
+                </th>
+                <th id="Wei">
+                    @*<div id="Weight">@Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })</div>
+                        @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })*@
+                    <input type="text" required name="Weight" id="Weight" />
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.Organization, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Organization, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.HomeDepo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HomeDepo, "", new { @class = "text-danger" })
+                </th>
+            </tr>
+            <tr>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th colspan="2" id="L">
+                    <input type="button" value="Вычесть" class="btn btn-default" id="Liter" />
+                </th>
+                <th>
+
+                </th>
+                <th id="Calcu">
+                    <input type="button" value="Перевести" class="btn btn-default" id="Calculate" />
+                </th>
+                <th>
+
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+
+            </tr>
+            <tr>
+                <th colspan="12">
+                    <input type="submit" value="Создать суточную ведомость" class="btn btn-default col-md-offset-5" id="buttonCreateState" />
+                </th>
+
+            </tr>
+        </table>
+
+
+    }
+
+</div>
+
+<div class="search col-md-offset-4">
+    @using (Ajax.BeginForm("FuelStatementDateSearch", new AjaxOptions { UpdateTargetId = "show" }))
+    {<p><h4>Выбор дипазона дат:</h4></p>
+     <div class="form-inline my-2 my-lg-0">
+         <input type="text" required name="Date" id="SdateSearch" class="form-control  date1" autocomplete="off"/>
+         <input type="text" required name="Date1" id="POdateSearch" class="form-control  date1" autocomplete="off"/>
+         <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Показать номера ведомостей</button>        
+     </div>
+    }
+</div>
+<h5></h5>
+<div class="col-md-12" id="show"></div>
+<div class="search col-md-offset-4">
+    @using (Ajax.BeginForm("FuelStatementSearch", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <div class="form-inline my-2 my-lg-0">
+
+            <input class="form-control mr-sm-2" type="text" required pattern="\d|\d\d|\d\d\d|\d\d\d\d"  name="numberOfStatement" placeholder="1111" aria-label="Поиск" />
+            <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Поиск ведомости</button>
+        </div>
+
+
+    }
+</div>
+<h5></h5>
+<div class="col-md-12">
+    <div class="employee">
+        <div id="results"></div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+<script src="~/Scripts/jquery.datetimepicker.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $('.employee').css('background-color', 'lightgrey');
+        $('#Density').css('width', '100px')
+        $('#Density').css('height', '27px')
+        $('#VolumeLiters').css('width', '100px')
+        $('#Weight').css('width', '100px')
+        $('#buttonCreateState').css('background-color', 'blue');
+        $('#buttonCreateState').css('width', '300px');
+        $('#NumberStatement').css('width', '100px')
+        $('#CounterReadingBefore').css('width', '100px')
+        $('#CounterReadingAfter').css('width', '100px')
+        $('#Date').css('width', '170px')
+        $('#LocNum').css('width', '10px')
+        $('#Litr').css('background-color', 'green');
+        $('#Den').css('background-color', 'green');
+        $('#Wei').css('background-color', 'green');
+        $('#Calculate').css('background-color', 'lightgreen');
+        $('#Calcu').css('background-color', 'green');
+        $('#Calculate').css('width', '100px');
+        $('#Calculate').click(CalculateForm);
+        $('#Liter').click(CalculateLitr);
+        $('#Liter').css('width', '220px');
+        $('#After').css('background-color', 'darkred');
+        $('#Before').css('background-color', 'darkred');
+        $('#L').css('background-color', 'darkred');
+        $('#Liter').css('background-color', 'lightgreen');
+        $('.date1').datetimepicker({
+            dateformat: 'dd-mm-YY',
+            timeformat:'hh-mm-ss'
+          
+        });
+        
+
+
+
+    });
+
+
+
+    function CalculateForm() {
+        var x = $('#VolumeLiters').val();
+        var y = (($('#Density').val()).toString()).replace(",",".");
+        var y1 = parseFloat(y);
+        var z = Math.round(x * y1);
+        $('#Weight').val(z);
+
+    }
+
+    function CalculateLitr() {
+        var x = $('#CounterReadingAfter').val();
+        var y = $('#CounterReadingBefore').val();
+        var z = x - y;
+        $('#VolumeLiters').val(z);
+
+    }
+
+    function C() {
+
+
+    }
+
+</script>
+
+

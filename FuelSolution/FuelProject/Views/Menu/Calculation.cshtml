@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewBag.Title = "Calculation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Calculation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="calc col-md-offset-1 col-md-9 form-group">
+    <h3></h3>
+    <table class="table table-bordered">
+
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", "Menu", new AjaxOptions { UpdateTargetId = "17" }))
+                {
+                    <div class="form-inline my-3 my-lg-0">
+                        <input class="form-control " type="text" name="numberTank" value="17" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0 Calculate" type="submit" id="1">Перевести</button>
+                        <div id="17" class="btn btn-outline-success  my-2 my-sm-0"></div>
+
+                    </div>
+
+                }
+            </th>
+
+        </tr>
+    </table>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", new AjaxOptions { UpdateTargetId = "25" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" name="numberTank" value="25" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Перевести</button>
+                        <div id="25" class="btn btn-outline-success  my-2 my-sm-0"></div>
+
+                    </div>
+                }
+            </th>
+
+        </tr>
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", new AjaxOptions { UpdateTargetId = "26" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" name="numberTank" value="26" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Перевести</button>
+                        <div id="26" class="btn btn-outline-success  my-2 my-sm-0"></div>
+                    </div>
+                }
+            </th>
+
+        </tr>
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", new AjaxOptions { UpdateTargetId = "27" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" name="numberTank" value="27" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Перевести</button>
+                        <div id="27" class="btn btn-outline-success  my-2 my-sm-0"></div>
+                    </div>
+                }
+            </th>
+        </tr>
+    </table>
+    <table class="table table-bordered">
+
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", new AjaxOptions { UpdateTargetId = "28" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" name="numberTank" value="28" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Перевести</button>
+                        <div id="28" class="btn btn-outline-success  my-2 my-sm-0"></div>
+                    </div>
+                }
+            </th>
+
+        </tr>
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", new AjaxOptions { UpdateTargetId = "29" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" name="numberTank" value="29" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Перевести</button>
+                        <div id="29" class="btn btn-outline-success  my-2 my-sm-0"></div>
+                    </div>
+                }
+            </th>
+
+        </tr>
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("CalculationResult", new AjaxOptions { UpdateTargetId = "30" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" name="numberTank" value="30" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelSM" placeholder="сантиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="levelMM" placeholder="милиметры" aria-label="Поиск" />
+                        <input class="form-control mr-sm-2" type="text" name="density" placeholder="плотность" aria-label="Поиск" />
+                        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Перевести</button>
+                        <div id="30" class="btn btn-outline-success  my-2 my-sm-0"></div>
+                    </div>
+                }
+            </th>
+
+        </tr>
+    </table>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @using (Ajax.BeginForm("Summa", new AjaxOptions { UpdateTargetId = "RESULT" }))
+                {
+                    <div class="form-inline my-2 my-lg-0">
+                        <button class="btn" type="submit">Итого</button>
+                        <div id="RESULT" class="btn btn-outline-success  my-2 my-sm-0"></div>
+                    </div>
+                }
+            </th>
+
+        </tr>
+
+    </table>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.calc').css('margin-top', '50px');
+        $('.calc').css('background-color', '#beffae');
+    });
+</script>
+

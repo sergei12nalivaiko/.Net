@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "DeleteFuelStatement1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="search table-bordered col-md-12">
+    @using (Ajax.BeginForm("FuelStatementSearch", new AjaxOptions { UpdateTargetId = "results1" }))
+    {
+        <div class="form-inline my-2 my-lg-0">
+
+            <input class="form-control mr-sm-2" type="text" name="numberOfStatement" placeholder="Введите номер ведомости" aria-label="Поиск" />
+            <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Поиск ведомости</button>
+        </div>
+
+
+    }
+</div>
+<h5></h5>
+<div class="col-md-12">
+    <div class="employee">
+        <div id="results1"></div>
+    </div>
+</div>
+
+
+<div class="delete col-md-offset-4">
+    @using (Ajax.BeginForm("Delete", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <div class="deleteForm form-group">
+            <div class="form-inline">
+                <label>Введите номер суточной ведомости  для удаления: </label>
+                <input class="form-control mr-sm-2" type="text" name="id" placeholder="Номер ведомости" />
+            </div>
+            <h4></h4>
+            <div class="form-inline">
+                <label>Введите номер строки  для удаления: </label>
+                <input class="form-control mr-sm-2" type="text" name="numString" placeholder="Номер строки" />
+            </div>
+            
+
+        </div>
+        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Удалить строку</button>
+
+    }
+</div>
+<h5></h5>
+<div class="col-md-12">
+    <div class="employee">
+        <div id="results"></div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<script>
+
+    $('.delete').css('margin-top', '200px')
+    $('.delete').css('margin-left', '400px')
+    
+    //$('.search').css('width', '100%')
+    //$('.search').css('height', '100%')
+    //$('.search').css('position', 'absolute')
+    //$('.search').css('top', '50px')
+    //$('.search').css('left', '40px')
+    //$('.search').css('margin-right', '100px')
+    //$('.search').css('bottom', '400px')
+    //$('.search').css('content-align', 'center')
+
+    //$('.search').css('margin', 'auto')
+
+    
+
+
+</script>
+
+
+
+
+
+

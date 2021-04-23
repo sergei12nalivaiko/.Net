@@ -1,0 +1,145 @@
+﻿@model IEnumerable<FuelProject.Models.FuelDailyStatement>
+
+@{
+    ViewBag.Title = "FuelStatementSearch";
+
+}
+
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberStatement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocomotiveNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RouteNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LNameLocDriver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CounterReadingBefore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CounterReadingAfter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VolumeLiters)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Density)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeDepo)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberStatement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocomotiveNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RouteNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LNameLocDriver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CounterReadingBefore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CounterReadingAfter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolumeLiters)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Density)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeDepo)
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+<div class="SummaStatements">
+    <table class="table">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th id="L">
+                <h4>
+                    <p >Сумма в литрах =  @ViewBag.SL</p>
+                </h4>
+
+
+
+            </th>
+
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th id=" KG">
+                <h4>
+                    <p>Сумма в кг =  @ViewBag.KG</p>
+                </h4>
+
+            </th>
+        </tr>
+    </table>
+
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.SummaStatements').css('font-weight', '600');
+        $('.SummaStatements').css('background-color', 'green');
+    });
+</script>
+

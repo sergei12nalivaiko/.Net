@@ -1,0 +1,248 @@
+﻿
+@{
+    ViewBag.Title = "UserMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="hidden">
+    <input id="datetimer" value="@ViewBag.InvF.Datetimer" />
+    <input id="17" value="@ViewBag.InvF.Measurement17" />
+    <input id="25" value="@ViewBag.InvF.Measurement25" />
+    <input id="26" value="@ViewBag.InvF.Measurement26" />
+    <input id="27" value="@ViewBag.InvF.Measurement27" />
+    <input id="28" value="@ViewBag.InvF.Measurement28" />
+    <input id="29" value="@ViewBag.InvF.Measurement29" />
+    <input id="30" value="@ViewBag.InvF.Measurement30" />
+    <input id="31" />
+</div>
+<div class="hidden">
+    <input id="datetimerGSM" value="@ViewBag.Inv.Datetimer" />
+    <input id="13" value="@ViewBag.Inv.Measurement13"/>
+    <input id="15" value="@ViewBag.Inv.Measurement15" />
+    <input id="16" value="@ViewBag.Inv.Measurement16" />
+</div>
+
+
+<div class="menu">
+    <div class="col-md-3">
+
+        <fieldset class="col-md-10" style="margin-left:20px">
+            <legend>При инвентаризации</legend>
+            <ul class="nav nav-pills nav-stacked">
+
+
+                <li class="active">@Html.ActionLink("Ввод замеров ДТ", "EnterMeasureMentsFuel", "Menu")</li>
+                <li class="active">@Html.ActionLink("Ввод замеров ГСМ", "EnterMeasureMentsGSM", "Menu")</li>
+                <li class="active">@Html.ActionLink("Просмотр калибровки", "ViewCalibr", "Menu")</li>
+
+
+            </ul>
+        </fieldset>
+
+
+
+    </div>
+    <div class="invetory col-md-offset-5">
+        <h3>Дата последней инвентаризации:  @ViewBag.InvF.Datetimer</h3>
+
+    </div>
+    <div class="fuel col-md-offset-4">
+        <div id="fuel17">
+            <canvas id="canvas17" width="865" height="600" style="background-color:#eee;border:1px solid #ccc;margin-left:10px"></canvas>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+
+        var e17 = ($('#17').val()).toString();
+        var x17S = 20;
+        var y17S = 50;
+        var w17S = 100;
+        var h17S = 279;
+        var x17F = 20;
+        var y17F = 50;
+        var w17F = 100;
+        var h17F = h17S - parseInt(e17);
+        var str17 = "17";
+        var x17STR = 50;
+        var y17STR = 20;
+        color17 = "blue";
+        Draw(x17S, y17S, w17S, h17S, x17F, y17F, w17F, h17F, str17, e17, x17STR, y17STR, color17);
+
+
+        var e25 = ($('#25').val()).toString();
+        var x25S = 140;
+        var y25S = 50;
+        var w25S = 100;
+        var h25S = 279;
+        var x25F = 140;
+        var w25F = 100;
+        var h25F = h25S - parseInt(e25);
+        var y25F = 50;
+        var str25 = "25";
+        var x25STR = 170;
+        var y25STR = 20;
+        color25 = "blue";
+        Draw(x25S, y25S, w25S, h25S, x25F, y25F, w25F, h25F, str25, e25, x25STR, y25STR, color25);
+
+
+        var e26 = ($('#26').val()).toString();
+        var x26S = 260;
+        var y26S = 50;
+        var w26S = 100;
+        var h26S = 279;
+        var x26F = 260;
+        var y26F = 50;
+        var w26F = 100;
+        var h26F = h26S - parseInt(e26);
+        var str26 = "26";
+        var x26STR = 300;
+        var y26STR = 20;
+        color26 = "blue";
+        Draw(x26S, y26S, w26S, h26S, x26F, y26F, w26F, h26F, str26, e26, x26STR, y26STR, color26);
+
+
+        var e27 = ($('#27').val()).toString();
+        var x27S = 380;
+        var y27S = 50;
+        var w27S = 100;
+        var h27S = 279;
+        var x27F = 380;
+        var y27F = 50;
+        var w27F = 100;
+        var h27F = h27S - parseInt(e27);
+        var str27 = "27";
+        var x27STR = 420;
+        var y27STR = 20;
+        color27 = "blue";
+        Draw(x27S, y27S, w27S, h27S, x27F, y27F, w27F, h27F, str27, e27, x27STR, y27STR, color27);
+
+
+        var e28 = ($('#28').val()).toString();
+        var x28S = 500;
+        var y28S = 50;
+        var w28S = 100;
+        var h28S = 279;
+        var x28F = 500;
+        var y28F = 50;
+        var w28F = 100;
+        var h28F = h28S - parseInt(e28);
+        var str28 = "28";
+        var x28STR = 540;
+        var y28STR = 20;
+        color28 = "blue";
+        Draw(x28S, y28S, w28S, h28S, x28F, y28F, w28F, h28F, str28, e28, x28STR, y28STR, color28);
+
+
+        var e29 = ($('#29').val()).toString();
+        var x29S = 620;
+        var y29S = 50;
+        var w29S = 100;
+        var h29S = 279;
+        var x29F = 620;
+        var y29F = 50;
+        var w29F = 100;
+        var h29F = h29S - parseInt(e29);
+        var str29 = "29";
+        var x29STR = 650;
+        var y29STR = 20;
+        color29 = "blue";
+        Draw(x29S, y29S, w29S, h29S, x29F, y29F, w29F, h29F, str29, e29, x29STR, y29STR, color29);
+
+
+        var e30 = ($('#30').val()).toString();
+        var x30S = 740;
+        var y30S = 50;
+        var w30S = 100;
+        var h30S = 279;
+        var x30F = 740;
+        var y30F = 50;
+        var w30F = 100;
+        var h30F = h30S - parseInt(e30);
+        var str30 = "30";
+        var x30STR = 780;
+        var y30STR = 20;
+        color30 = "blue";
+        Draw(x30S, y30S, w30S, h30S, x30F, y30F, w30F, h30F, str30, e30, x30STR, y30STR, color30);
+
+        var e13 = ($('#13').val()).toString();
+        var x13S = 260;
+        var y13S = 380;
+        var w13S = 100;
+        var h13S = 211;
+        var x13F = 20;
+        var y13F = 300;
+        var w13F = 100;
+        var h13F = h13S - parseInt(e13);
+        var str13 = "13";
+        var x13STR = 300;
+        var y13STR = 350;
+        color13 = "brown";
+        Draw(x13S, y13S, w13S, h13S, x13F, y13F, w13F, h13F, str13, e13, x13STR, y13STR, color13);
+
+
+        var e15 = ($('#15').val()).toString();
+        var x15S = 380;
+        var y15S = 380;
+        var w15S = 100;
+        var h15S = 211;
+        var x15F = 20;
+        var y15F = 300;
+        var w15F = 100;
+        var h15F = h15S - parseInt(e15);
+        var str15 = "15";
+        var x15STR = 410;
+        var y15STR = 350;
+        color15 = "brown";
+        Draw(x15S, y15S, w15S, h15S, x15F, y15F, w15F, h15F, str15, e15, x15STR, y15STR, color15);
+
+
+        var e16 = ($('#16').val()).toString();
+        var x16S = 500;
+        var y16S = 380;
+        var w16S = 100;
+        var h16S = 211;
+        var x16F = 20;
+        var y16F = 300;
+        var w16F = 100;
+        var h16F = h15S - parseInt(e15);
+        var str16 = "16";
+        var x16STR = 540;
+        var y16STR = 350;
+        color16 = "brown";
+        Draw(x16S, y16S, w16S, h16S, x16F, y16F, w16F, h16F, str16, e16, x16STR, y16STR, color16);
+
+    });
+
+    function Draw(xs, ys, ws, hs, xf, yf, wf, hf, str, e, x, y, color) {
+
+        var canvas = document.getElementById("canvas17"),
+            context = canvas.getContext("2d");
+
+        context.strokeStyle = "red";
+        context.fillStyle = color;
+        context.lineWidth = 6.5;
+
+        //context.fillStyle = "#00FF00";
+
+        context.strokeRect(xs, ys, ws, hs);
+        context.fillRect(xs, ys, ws, hs);
+        context.clearRect(xs, ys, wf, hf);
+        context.font = "italic 15pt Arial"
+        context.fillText(str, x, y);
+
+        //context.clearRect(200, 40, 50, 50);
+
+    }
+
+
+</script>
+
+
+

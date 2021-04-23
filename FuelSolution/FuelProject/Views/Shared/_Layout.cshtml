@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/datepicker.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/menu.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="up container-fluid navbar-fixed-top navbar-inverse navbar-header">
+        
+            
+        <div class="spisok">
+            <ul class="nav nav-pills ">
+                <li class="active">@Html.ActionLink("Главная страница", "UserMenu1", "LogInUser")</li>
+                <li class="active">@Html.ActionLink("Создать суточную ведомость", "CreateFuelStatement", "Menu")</li>
+                <li class="active">@Html.ActionLink("Удалить суточную ведомость", "DeleteFuelStatement1", "Menu")</li>
+                <li class="active">@Html.ActionLink("Расчет замеров ДТ", "Calculation", "Menu")</li>
+                <li class="active">@Html.ActionLink("Расчет замеров ГСМ", "CalculationGSM", "Menu")</li>
+                <li class="active">@Html.ActionLink("Поиск суточной ведомости", "FuelStatementSearch", "Menu")</li>
+                @*<li class="active">@Html.ActionLink("Калибровка емкостей", "Сalibration", "Menu")</li>*@
+
+            </ul>
+        </div>
+       
+           
+        </div>
+    
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/jquery.datetimepicker.js"></script>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('.up').css('background-color', '#8bff78');
+        $('li').css('height', '50');
+        $('li').css('font-weight', '600');
+        $('li').css('font-size', 'large');
+        $('.spisok').css('margin-top', '5px');
+        $('.spisok').css('margin-left', '5px');
+
+    });
+</script>
+
